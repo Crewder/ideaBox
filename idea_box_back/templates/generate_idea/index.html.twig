@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GenerateIdeaController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <table border="1px">
+    {% for idea in ideas %}
+        <tr>
+            <td>{{ idea.id }}</td>
+            <td>{{ idea.title }}</td>
+            <td>{{ idea.createdAt|date }}</td>
+            <td>{{ idea.author }}</td>
+            <td>{{ idea.score }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}
